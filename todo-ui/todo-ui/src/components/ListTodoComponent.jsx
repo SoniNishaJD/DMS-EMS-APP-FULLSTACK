@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { completeTodo, deleteTodo, getAllTodos, inCompleteTodo } from '../services/TodoService'
 import { useNavigate } from 'react-router-dom'
+
 
 const ListTodoComponent = () => {
 
@@ -32,6 +33,7 @@ const ListTodoComponent = () => {
     }
     
     function removeTodo(id){
+        // eslint-disable-next-line no-unused-vars
         deleteTodo(id).then((response) => {
             listTodos();
         }).catch(error => {
@@ -40,6 +42,7 @@ const ListTodoComponent = () => {
     }
 
     function markCompleteTodo(id){
+        // eslint-disable-next-line no-unused-vars
         completeTodo(id).then((response) => {
             listTodos()
         }).catch(error => {
@@ -48,6 +51,7 @@ const ListTodoComponent = () => {
     }
 
     function markInCompleteTodo(id){
+        // eslint-disable-next-line no-unused-vars
         inCompleteTodo(id).then((response) => {
             listTodos();
         }).catch(error => {

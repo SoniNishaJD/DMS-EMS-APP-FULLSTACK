@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import ListTodoComponent from './components/ListTodoComponent'
 import HeaderComponent from './components/HeaderComponent'
