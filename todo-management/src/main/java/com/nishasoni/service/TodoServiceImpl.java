@@ -6,6 +6,7 @@ import com.nishasoni.exception.ResourceNotFoundException;
 import com.nishasoni.repository.TodoRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +16,9 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class TodoServiceImpl implements TodoService {
 
+
     private TodoRepository todoRepository;
+
 
     private ModelMapper modelMapper;
 

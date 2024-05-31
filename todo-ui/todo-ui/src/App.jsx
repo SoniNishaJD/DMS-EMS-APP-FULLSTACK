@@ -1,33 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ListTodoComponent from './components/ListTodoComponent'
+import HeaderComponent from './components/HeaderComponent'
+import FooterComponent from './components/FooterComponent'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import TodoComponent from './components/TodoComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <BrowserRouter>
+        <HeaderComponent />
+          <Routes>
+              {/* http://localhost:8080 */}
+              <Route path='/' element = { <ListTodoComponent /> }></Route>
+               {/* http://localhost:8080/todos */}
+              <Route path='/todos' element = { <ListTodoComponent /> }></Route>
+              {/* http://localhost:8080/add-todo */}
+              <Route path='/add-todo' element = { <TodoComponent /> }></Route>
+              {/* http://localhost:8080/update-todo/1 */}
+              <Route path='/update-todo/:id' element = { <TodoComponent /> }></Route>
+
+          </Routes>
+        <FooterComponent />
+        </BrowserRouter>
     </>
   )
 }
